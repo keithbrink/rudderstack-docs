@@ -12,7 +12,7 @@ RudderStack’s Python SDK allows you to track your customer event data from you
 
 <div class="successBlock">
 
-Find this SDK in our [GitHub repository](https://github.com/rudderlabs/rudder-sdk-python).
+Refer to the Python SDK's <a href="https://github.com/rudderlabs/rudder-sdk-python">GitHub repository</a> for the source code and implementation details.
 </div>
 
 ## Installing the RudderStack Python SDK
@@ -55,19 +55,13 @@ A sample `track` call is as shown :
 
 ```python
 rudder_analytics.track('developer_user_id', 'Simple Track Event', {
-  'key1': 'val1'
+    'key1': 'val1'
 })
 ```
 
 ## Identify
 
 The `identify` call lets you identify a visiting user and associate them to their actions.
-
-<div class="infoBlock">
-
-For more information on the <code class="inline-code">identify</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
-</div>
 
 An example `identify` call is as shown:
 
@@ -90,15 +84,14 @@ The `identify` method parameters are as described below:
 | `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 | `traits`       | Object   | Optional                                  | Dictionary of the traits associated with the user, such as `name`or `email`                                                |
 
+<div class="infoBlock">
+
+For more information on the <code class="inline-code">identify</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
+</div>
+
 ## Track
 
 The `track` call lets you record the customer events, i.e. the actions that they perform, along with any properties associated with them.
-
-<div class="infoBlock">
-
-For more information on the <code class="inline-code">track</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
-</div>
 
 An example `track` call is as shown:
 
@@ -122,15 +115,14 @@ The `track` method parameters are as described below:
 | `anonymous_id` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
 | `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled.                                                 |
 
+<div class="infoBlock">
+
+For more information on the <code class="inline-code">track</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
+</div>
+
 ## Page
 
 The `page` call lets you record your page views with any additional relevant information about the viewed page.
-
-<div class="infoBlock">
-
-For more information on the <code class="inline-code">page</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
-</div>
 
 An example `page` call is as shown:
 
@@ -152,15 +144,14 @@ The `page` method parameters are as described below:
 | `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
 | `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
+<div class="infoBlock">
+
+For more information on the <code class="inline-code">page</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
+</div>
+
 ## Screen
 
 The `screen` call lets you record whenever your user views their mobile screen with any additional relevant information about the screen.
-
-<div class="infoBlock">
-
-For more information on the <code class="inline-code">screen</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
-</div>
 
 An example `screen` call is as shown:
 
@@ -182,15 +173,14 @@ The `screen` method parameters are as described below:
 | `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
 | `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
+<div class="infoBlock">
+
+For more information on the <code class="inline-code">screen</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
+</div>
+
 ## Group
 
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group, such as the name of the company, the number of employees, etc.
-
-<div class="infoBlock">
-
-For more information on the <code class="inline-code">group</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
-</div>
 
 An example `group` call is as shown:
 
@@ -213,6 +203,11 @@ The `group` method parameters are as follows:
 | `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                               |
 | `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
+<div class="infoBlock">
+
+For more information on the <code class="inline-code">group</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
+</div>
+
 ## Alias
 
 The `alias` call lets you merge different identities of a known user.
@@ -220,22 +215,31 @@ The `alias` call lets you merge different identities of a known user.
 <div class="infoBlock">
 
 <code class="inline-code">alias</code> is an advanced method. However, it is required when managing user identities in some destinations.
-
 </div>
 
 <div class="successBlock">
 
-The following downstream destinations support the `alias` call:
-<ul>
-<li>[**MoEngage**](https://rudderstack.com/docs/destinations/marketing/moengage/)</li>
-<li>[**Kissmetrics**](https://rudderstack.com/docs/destinations/analytics/kissmetrics/)</li>
-<li>[**Amplitude**](https://rudderstack.com/docs/destinations/analytics/amplitude/) \(only supported by the [**JavaScript SDK**](rudderstack-javascript-sdk/) via [**Cloud Mode**](https://rudderstack.com/docs/connections/rudderstack-connection-modes/#cloud-mode)\)</li>
-</ul>
-</div>
-
-<div class="infoBlock">
-
-For more information on the `alias` call, refer to the [**RudderStack Events Specification**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/alias/) guide.
+  The following destinations support the <code class="inline-code">alias</code>
+  call:
+  <ul>
+    <li>
+      <a href="https://rudderstack.com/docs/destinations/marketing/moengage/">MoEngage</a>
+    </li>
+    <li>
+      <a href="https://rudderstack.com/docs/destinations/analytics/kissmetrics/">Kissmetrics</a>
+    </li>
+    <li>
+      <a href="https://rudderstack.com/docs/destinations/analytics/amplitude/">Amplitude</a> (only
+      supported by the <a href="https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/">
+        JavaScript SDK
+      </a> via <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/#cloud-mode">
+        Cloud Mode
+      </a>)
+    </li>
+    <li>
+      <a href="https://rudderstack.com/docs/destinations/analytics/mixpanel/">Mixpanel</a>
+    </li>
+  </ul>
 </div>
 
 An example `alias` call is as shown:
@@ -257,28 +261,26 @@ The `alias` method parameters are as mentioned below:
 
 <div class="infoBlock">
 
-For more information on the <code class="inline-code">alias</code> call, refer to the <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
-
+For more information on the <code class="inline-code">alias</code> call, refer to the [**RudderStack Events Specification**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/alias/) guide.
 </div>
 
 ## Error Handling
 
 To handle errors that may occur when sending these events via `rudder_analytics` you can declare a callback called `on_error`.
 
-```
+```python
 def on_error(error, events):
-    print("Error response:", error)
+    print("Error response: ", error)
 
 rudder_analytics.on_error = on_error
 ```
 
 <div class="infoBlock">
 
-**NOTE:** this will only return errors that may occur with the HTTP request to the Gateway. Any errors that occur downstream will not be returned via this callback.
-
+**NOTE:** This will only return errors that may occur with the HTTP request to the Gateway. Any errors that occur downstream will not be returned via this callback.
 </div>
 
-Common request responses from the Gateway are as follows
+Common request responses from the Gateway are as follows:
 
 | Status                                     | Code |
 | :----------------------------------------- | :--- |
