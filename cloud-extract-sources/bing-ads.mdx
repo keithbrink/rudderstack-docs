@@ -7,69 +7,59 @@ description: Step-by-step guide to ingest your Bing Ads data into RudderStack.
 
 [**Bing Ads**](https://ads.microsoft.com/) is a pay per click \(PPC\) advertising platform that works on both Bing and Yahoo search engines. It allows marketers to track and monitor their ad campaigns, resulting clicks, CTRs, and more. With Bing Ads, you can also implement efficient ad retargeting for your customers who have completed actions like adding product to a cart or view a product without purchasing it.
 
-This document guides you in setting up Bing Ads as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Bing Ads data, which can then be routed to your data warehouse destination via RudderStack.
+This guide will help you set up Bing Ads as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Bing Ads data and routes it to the supported [**warehouse destinations**](https://rudderstack.com/docs/data-warehouse-integrations/).
 
 <div class="infoBlock">
 
-**All the Cloud Extract sources support sending data only to a data warehouse destination.**
+<strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 </div>
 
-## Getting Started
+## Getting started
 
 To set up **Bing Ads** as a source in RudderStack, follow these steps:
 
-- Log into your [**RudderStack dashboard**](https://app.rudderlabs.com/signup?type=freetrial).
+- Log into your [**RudderStack dashboard**](https://app.rudderstack.com).
 
-<!--<img src="../assets/1 (15) (1) (1).png" />-->
+- Then, click on the **Directory** option in the left navigation bar and go to **Cloud Extract** under **Sources**. From the list of sources, click on **Bing Ads**.
 
-<img
-  src="../assets/1 (15) (1) (1).png"
-  alt="Log into your RudderStack Dashboard"
-/>
-
-- Then, click on the **Directory** option on the left navigation bar and go to **Cloud Extract** under **Sources**. From the list of sources, click on **Bing Ads**.
-
-<!--<img src="../assets/1 (26).png" />-->
-
-<img src="../assets/1 (26).png" alt="Directory" />
+<img src=".../assets/cloud-extract-sources/bingads-2.png" alt="Bing Ads source" />
 
 - Assign a name to your source, and click on **Next**.
+
+### Specifying connection credentials
+
 - Then, click on the **Connect with Bing Ads** option. Give RudderStack the required permissions to access your Bing Ads account.
 
-<!--<img src="../assets/2 (30).png" />-->
-
-<img src="../assets/2 (30).png" alt="Connect with Bing Ads" />
+<img src=".../assets/cloud-extract-sources/bingads-3.png" alt="Bing Ads permissions" />
 
 <div class="successBlock">
 
-  If you've already configured Bing Ads as a source before, you can choose the
-  account visible under the **Use existing credentials** tab.
+  If you've already configured Bing Ads as a source before, you can select the account under the <strong>Use existing credentials</strong> tab.
 </div>
 
+### Selecting the data to import
+
 - Under **Source Settings**, choose the Bing Ads **Customer Account** and the **Report Name**.
-- Once you select the report using **Report Name**, the **Report Columns** option will appear automatically. Choose the required columns from which from which you want to ingest the data into RudderStack.
 
-<!--<img src="../assets/3 (30).png" />-->
+- Once you select the report under **Report Name**, the **Report Columns** option will appear automatically. Choose the required columns from which from which you want to ingest the data into RudderStack.
 
-<img
-  src="../assets/3 (30).png"
-  alt="Report Name and Report Columns"
-/>
+<img src=".../assets/cloud-extract-sources/bingads-4.png" alt="Specifying the data" />
 
-- Next, under **Destination Settings**, specify the **Table Prefix**. RudderStack will create a table in your warehouse destination with this prefix and store the Bing Ads source data.
+### Setting the table prefix, run frequency and data update schedule
+
+- Next, under **Destination Settings**, specify the **Table Prefix**. RudderStack will create a table in your warehouse destination with this prefix and store your Bing Ads data.
+
 - Under **Schedule Settings**, specify the **Run Frequency** with which RudderStack will sync the data to the warehouse destination. Optionally, you can also specify the time when you want this synchronization to happen, by choosing the time under the **Sync Starting At** option.
 
 That's it! Bing Ads is now successfully configured as a source on your RudderStack dashboard.
 
 RudderStack will start ingesting data from Bing Ads as per the specified frequency. You can then connect this source to your data warehouse by clicking on **Add Destination**, as shown:
 
-<!--<img src="../assets/6 (24).png" />-->
-
-<img src="../assets/6 (24).png" alt="Add Destination" />
+<img src=".../assets/cloud-extract-sources/bingads-5.png" alt="Specifying the data" />
 
 <div class="infoBlock">
 
-Select the **Use Existing Destination** option if you have already configured a data warehouse destination in RudderStack. To configure a data warehouse destination from scratch, select the **Create New Destination** option.
+Select the <strong>Use Existing Destination</strong> option if you have already configured a data warehouse destination in RudderStack. To configure a data warehouse destination from scratch, select the <strong>Create New Destination</strong> option.
 </div>
 
 ## FAQs
@@ -80,6 +70,6 @@ Yes, it is.
 
 We have implemented a feature wherein RudderStack associates a table prefix for every Cloud Extract source writing to a warehouse schema. This way, multiple Cloud Extract sources can write to the same schema with different table prefixes.
 
-## Contact Us
+## Contact us
 
-If you come across any issues while configuring Bing Ads as a source on the RudderStack dashboard, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
+For queries on any of the sections covered in this guide, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
