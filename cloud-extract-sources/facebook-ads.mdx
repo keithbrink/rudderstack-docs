@@ -8,94 +8,61 @@ description: >-
 
 # Facebook Ads
 
-[Facebook Ads](https://www.facebook.com/business/ads) is an online advertising platform that lets you create and run cross-device marketing campaigns, and track their performance with easy to read reports. With Facebook Ads, you can create, publish and purchase ads across all Facebook platforms - including Facebook, Instagram, Facebook Messenger, and Audience Network.
+[**Facebook Ads**](https://www.facebook.com/business/ads) is an online advertising platform that lets you create and run cross-device marketing campaigns, as well as track their performance with easy to read reports. With Facebook Ads, you can create, publish and purchase ads across all Facebook platforms - including Facebook, Instagram, Facebook Messenger, and Audience Network.
 
-This document guides you in setting up Facebook Ads as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Facebook Ads data, which can then be routed to your data warehouse destination supported by RudderStack.
+This guide will help you set up Facebook Ads as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Facebook Ads data and routes it to the supported [**warehouse destinations**](https://rudderstack.com/docs/data-warehouse-integrations/).
 
 <div class="infoBlock">
 
-**All the Cloud Extract sources support sending data only to a data warehouse destination.**
-
+<strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 </div>
 
-## Getting Started
+## Getting started
 
-To add Facebook Ads as a source in RudderStack, follow these steps:
+To set up **Facebook Ads** as a source in RudderStack, follow these steps:
 
-- Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
-- From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
+- Log into your [**RudderStack dashboard**](https://app.rudderstack.com).
 
-<!--<img src="../assets/1 (4) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (3).png" />-->
+- Then, click on the **Directory** option in the left navigation bar and go to **Cloud Extract** under **Sources**. From the list of sources, click on **Facebook Ads**.
 
-<img
-  src="../assets/1 (4) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (4).png"
-  alt="Add Source"
-/>
-
-- Next, select **Facebook Ads** from the list of **Cloud Sources**, and click on **Next**.
-
-<!--<img src="../assets/2 (1).png" />-->
-
-<img src="../assets/2 (1).png" alt="Facebook Ads" />
+<img src=".../assets/cloud-extract-sources/facebookads-1.png" alt="Facebook Ads source" />
 
 - Assign a name to your source, and click on **Next**.
 
-<!--<img src="../assets/screen-shot-2021-02-08-at-1.21.12-pm.png" />-->
-
-<img
-  src="../assets/screen-shot-2021-02-08-at-1.21.12-pm.png"
-  alt="Assign a name to your source"
-/>
-
-### Setting Up the Connection
+### Specifying the connection credentials
 
 - Click on **Connect with Facebook Ads** and give RudderStack the required access permissions. Then, click on **Next**.
 
-<!--<img src="../assets/screen-shot-2021-02-08-at-1.23.21-pm (1).png" />-->
-
-<img
-  src="../assets/screen-shot-2021-02-08-at-1.23.21-pm (1).png"
-  alt="Connect with Facebook Ads"
-/>
+<img src=".../assets/cloud-extract-sources/facebookads-2.png" alt="Facebook Ads permissions" />
 
 <div class="infoBlock">
 
-If you have already connected RudderStack to your Facebook Ads account, your credentials should appear automatically under **Use existing credentials**.
-
+If you have already connected RudderStack to your Facebook account, your credentials should appear automatically under <strong>Use existing credentials</strong>.
 </div>
 
-### Configuring the Source
+### Configuring the source
 
 - In the next screen, choose the **Page** from where you want RudderStack to import the data. Also, select the **Historical data** as well as the **Attribution window** timeframe, and click on **Next**.
-  - **Historical Data** - this sets the range for the first sync, and can be used to fetch the historical pull
-  - **Attribution window** - this sets the date range for any subsequent sync
 
-<!--<img src="../assets/screen-shot-2021-02-08-at-1.22.07-pm.png" />-->
+  - **Historical Data** - This option sets the range for the first sync and can be used to fetch all the historical data.
+  - **Attribution window** - This option sets the date range for any subsequent data sync.
 
-<img
-  src="../assets/screen-shot-2021-02-08-at-1.22.07-pm.png"
-  alt="Attribution Window"
-/>
+<img src=".../assets/cloud-extract-sources/facebookads-3.png" alt="Facebook Ads source configuration" />
 
-<div class="infoBlock">
+<div class="warningBlock">
 
-RudderStack will not sync the data which is older than the selected timeframes.
-
+RudderStack will not sync the data that is older than the specified timeframes.
 </div>
 
-### Setting the Data Update Schedule
+### Setting the data update schedule
 
 - Next, you will be required to set the **Run Frequency** to schedule the data import from your Facebook Ads account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
 
-<!--<img src="../assets/6 (7).png" />-->
-
 <img src="../assets/6 (7).png" alt="Run Frequency" />
 
-### Specifying the Data to Import
+### Specifying the data to import
 
-- Finally, select the data from the Facebook Ads page that you want RudderStack to import. You can choose to import data from select columns, or import all the data by clicking on **Select All**. Then, click on **Next**.
-
-<!--<img src="../assets/screen-shot-2021-02-08-at-1.24.13-pm.png" />-->
+- Finally, select the data from the Facebook Ads page that you want RudderStack to import. You can choose to import data from the select columns, or import all the data by clicking on **Select All**. Then, click on **Next**.
 
 <img
   src="../assets/screen-shot-2021-02-08-at-1.24.13-pm.png"
@@ -104,21 +71,19 @@ RudderStack will not sync the data which is older than the selected timeframes.
 
 That's it! Facebook Ads is now successfully configured as a source on your RudderStack dashboard.
 
-RudderStack will start importing data from Facebook Ads as per the specified frequency. You can further connect this source to your data warehouse by clicking on **Connect Destinations** or **Add Destinations**, as shown:
-
-<!--<img src="../assets/screen-shot-2021-02-08-at-1.24.32-pm.png" />-->
+RudderStack will start importing data from Facebook Ads as per the specified frequency. You can then connect this source to your data warehouse by clicking on **Add Destination**, as shown:
 
 <img
   src="../assets/screen-shot-2021-02-08-at-1.24.32-pm.png"
   alt="Connect Destinations"
 />
 
-<div class="successBlock">
+<div class="infoBlock">
 
-Use the **Connect Destinations** option if you have already configured a data warehouse destination in RudderStack. To configure a data warehouse destination from scratch, click on the **Add Destination** button.
+Select the <strong>Use Existing Destination</strong> option if you have already configured a data warehouse destination in RudderStack. To configure a data warehouse destination from scratch, select the <strong>Create New Destination</strong> option.
 </div>
 
-## What Facebook Ads Data does RudderStack Import?
+## Facebook Ads data imported by RudderStack 
 
 | **Property**         | **Table Name**         | **Description**                                                                                                                                                               |
 | :------------------- | :--------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -136,6 +101,6 @@ Yes, it is.
 
 We have implemented a feature wherein RudderStack associates a table prefix for every Cloud Extract source writing to a warehouse schema. This way, multiple Cloud Extract sources can write to the same schema with different table prefixes.
 
-## Contact Us
+## Contact us
 
-If you come across any issues while configuring Facebook Ads as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel; we will be happy to talk to you!
+For queries on any of the sections covered in this guide, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
